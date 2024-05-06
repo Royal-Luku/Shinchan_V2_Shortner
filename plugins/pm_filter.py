@@ -1,4 +1,4 @@
-# Kanged From @TroJanZheX
+#Subscribe On Youtube @WeRdevelopers 
 import asyncio
 import re
 import ast
@@ -32,6 +32,7 @@ from database.gfilters_mdb import (
     del_allg
 )
 import logging
+#from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton 
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -1762,7 +1763,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
-        m=await message.reply_text(f"<b><i> 𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 𝖿𝗈𝗋 '{search}' 🔎</i></b>")
+        m=await message.reply_text(f"<b><i> 𝖲𝖾𝖺𝗋𝖼𝗁𝗂𝗇𝗀 𝖿𝗈𝗋 '{search}' 🔎</i></b>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("button 1", url="")],[InlineKeyboardButton("button 2", url=""),InlineKeyboardButton("button 3", url="")]])
         settings = await get_settings(message.chat.id)
         await msg.message.delete()
     # if 'is_shortlink' in settings.keys():
